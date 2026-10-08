@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jodamira</title>
+  <meta name="description" content="Jodamira: Quality of Service (QoS) für Netzwerktechnologien. Den Anfang macht eine Android-App. / Quality of Service (QoS) for network technologies, starting with an Android app.">
+  <style>
+    :root {
+      --bg: #eef2f4;
+      --ink: #14262e;
+      --muted: #4d6670;
+      --accent: #0e6b7a;
+      --line: #c5d3d9;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1c22;
+        --ink: #e6eef1;
+        --muted: #9db3bb;
+        --accent: #5fc3d2;
+        --line: #26404a;
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      display: flex;
+      flex-direction: column;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+    }
+    header {
+      width: 100%;
+      max-width: 40rem;
+      margin: 0 auto;
+      padding: 1.25rem 1.5rem 0;
+      display: none;
+      justify-content: flex-end;
+      gap: 0.25rem;
+    }
+    .js header { display: flex; }
+    header button {
+      font: inherit;
+      font-size: 0.9rem;
+      color: var(--muted);
+      background: none;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 0.25rem 0.75rem;
+      cursor: pointer;
+    }
+    header button[aria-pressed="true"] {
+      color: var(--ink);
+      border-color: var(--accent);
+    }
+    header button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      max-width: 40rem;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+    h1 {
+      margin: 0 0 1.25rem;
+      font-size: clamp(2.75rem, 11vw, 5.5rem);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+    }
+    section[hidden] { display: none; }
+    section + section { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--line); }
+    .js section + section { margin-top: 0; padding-top: 0; border-top: 0; }
+    p { margin: 0 0 1rem; max-width: 34rem; color: var(--muted); font-size: 1.125rem; }
+    a { color: var(--accent); text-underline-offset: 0.2em; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 1.25rem 1.5rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    footer nav { max-width: 40rem; margin: 0 auto; display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+  <header aria-label="Sprache / Language">
+    <button type="button" data-lang="de" aria-pressed="true" lang="de">Deutsch</button>
+    <button type="button" data-lang="en" aria-pressed="false" lang="en">English</button>
+  </header>
+
+  <main>
+    <h1>Jodamira</h1>
+
+    <section lang="de" id="de">
+      <p>Jodamira beschäftigt sich mit Quality of Service (QoS) für Netzwerktechnologien: Wie gut Verbindungen tatsächlich funktionieren und wie sich das verständlich darstellen lässt.</p>
+      <p>Den Anfang macht eine Android-App. Weitere Informationen folgen.</p>
+      <!-- Kontaktadresse später anpassen, sobald die E-Mail-Weiterleitung eingerichtet ist -->
+      <p>Kontakt: <a href="mailto:info@jodamira.com">info@jodamira.com</a></p>
+    </section>
+
+    <section lang="en" id="en">
+      <p>Jodamira works on Quality of Service (QoS) for network technologies: how well connections actually perform, and how to present that in a way people can understand.</p>
+      <p>We are starting with an Android app. More information will follow.</p>
+      <p>Contact: <a href="mailto:info@jodamira.com">info@jodamira.com</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <nav aria-label="Rechtliches / Legal">
+      <a href="impressum.html">Impressum / Legal notice</a>
+      <a href="datenschutz.html">Datenschutz / Privacy</a>
+    </nav>
+  </footer>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.className += ' js';
+      var buttons = document.querySelectorAll('header button');
+      var sections = { de: document.getElementById('de'), en: document.getElementById('en') };
+      function show(lang) {
+        root.setAttribute('lang', lang);
+        for (var key in sections) { sections[key].hidden = (key !== lang); }
+        for (var i = 0; i < buttons.length; i++) {
+          buttons[i].setAttribute('aria-pressed', buttons[i].getAttribute('data-lang') === lang ? 'true' : 'false');
+        }
+      }
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', function () { show(this.getAttribute('data-lang')); });
+      }
+      var pref = (navigator.language || 'en').toLowerCase();
+      show(pref.indexOf('de') === 0 ? 'de' : 'en');
+    })();
+  </script>
+</body>
+</html>

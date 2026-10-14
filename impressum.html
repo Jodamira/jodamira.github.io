@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Impressum / Legal notice – Jodamira</title>
+  <meta name="description" content="Impressum / Legal notice – Jodamira">
+  <style>
+    :root {
+      --bg: #eef2f4;
+      --ink: #14262e;
+      --muted: #4d6670;
+      --accent: #0e6b7a;
+      --line: #c5d3d9;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1c22;
+        --ink: #e6eef1;
+        --muted: #9db3bb;
+        --accent: #5fc3d2;
+        --line: #26404a;
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      display: flex;
+      flex-direction: column;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+    }
+    header {
+      width: 100%;
+      max-width: 40rem;
+      margin: 0 auto;
+      padding: 1.25rem 1.5rem 0;
+      display: none;
+      justify-content: flex-end;
+      gap: 0.25rem;
+    }
+    .js header { display: flex; }
+    header button {
+      font: inherit;
+      font-size: 0.9rem;
+      color: var(--muted);
+      background: none;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 0.25rem 0.75rem;
+      cursor: pointer;
+    }
+    header button[aria-pressed="true"] {
+      color: var(--ink);
+      border-color: var(--accent);
+    }
+    header button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+    main {
+      flex: 1;
+      width: 100%;
+      max-width: 40rem;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+    }
+    h1 {
+      margin: 0 0 1.5rem;
+      font-size: clamp(1.75rem, 5vw, 2.25rem);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+    }
+    h2 {
+      margin: 1.75rem 0 0.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    section[hidden] { display: none; }
+    p, li { margin: 0 0 0.75rem; color: var(--muted); font-size: 1rem; max-width: 36rem; }
+    ul { padding-left: 1.25rem; margin: 0 0 0.75rem; color: var(--muted); }
+    a { color: var(--accent); text-underline-offset: 0.2em; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 1.25rem 1.5rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    footer nav { max-width: 40rem; margin: 0 auto; display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+  <header aria-label="Sprache / Language">
+    <button type="button" data-lang="de" aria-pressed="true" lang="de">Deutsch</button>
+    <button type="button" data-lang="en" aria-pressed="false" lang="en">English</button>
+  </header>
+
+  <main>
+    <section lang="de" id="de">
+      <h1>Impressum</h1>
+
+      <h2>Anbieter</h2>
+      <p>Ralf Johannsen</p>
+      <p>Projekt / Marke: Jodamira<br>
+      Website: <a href="https://jodamira.com">jodamira.com</a></p>
+
+      <h2>Kontakt</h2>
+      <p>E-Mail: <a href="mailto:info@jodamira.com">info@jodamira.com</a></p>
+
+      <h2>Verantwortlich für den Inhalt</h2>
+      <p>Ralf Johannsen</p>
+
+      <h2>Hinweis zum Umfang der Angaben</h2>
+      <p>Solange keine kommerzielle Nutzung dieses Webauftritts stattfindet (kein Angebot von Waren oder Dienstleistungen gegen Entgelt, keine werbliche Geschäftstätigkeit), genügen nach hier vertretener Auffassung Name und eine erreichbare E-Mail-Adresse. Eine ladungsfähige Anschrift wird bewusst nicht veröffentlicht.</p>
+      <p>Sobald sich daran etwas ändert – insbesondere bei Aufnahme einer kommerziellen Tätigkeit oder bei Gründung einer Gesellschaft – werden die dann gesetzlich erforderlichen Angaben (einschließlich Anschrift und ggf. Registerdaten) zeitnah auf dieser Seite ergänzt.</p>
+
+      <h2>Haftung für Inhalte und Links</h2>
+      <p>Die Inhalte dieser Website wurden mit Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität wird keine Gewähr übernommen. Für Inhalte externer Links sind ausschließlich deren Betreiber verantwortlich.</p>
+    </section>
+
+    <section lang="en" id="en" hidden>
+      <h1>Legal notice</h1>
+
+      <h2>Provider</h2>
+      <p>Ralf Johannsen</p>
+      <p>Project / brand: Jodamira<br>
+      Website: <a href="https://jodamira.com">jodamira.com</a></p>
+
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:info@jodamira.com">info@jodamira.com</a></p>
+
+      <h2>Responsible for content</h2>
+      <p>Ralf Johannsen</p>
+
+      <h2>Scope of these details</h2>
+      <p>As long as this website is not used commercially (no paid offer of goods or services, no advertising business activity), name and a reachable email address are considered sufficient. A postal address suitable for formal service is deliberately not published.</p>
+      <p>If that changes – in particular if commercial activity begins or a company is formed – the details then required by law (including address and, where applicable, register data) will be added to this page without undue delay.</p>
+
+      <h2>Liability for content and links</h2>
+      <p>The content of this website has been prepared with care. No guarantee is given for accuracy, completeness or currency. Operators of external links are solely responsible for their content.</p>
+    </section>
+  </main>
+
+  <footer>
+    <nav aria-label="Navigation">
+      <a href="index.html">Jodamira</a>
+      <a href="impressum.html">Impressum / Legal notice</a>
+      <a href="datenschutz.html">Datenschutz / Privacy</a>
+    </nav>
+  </footer>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.className += ' js';
+      var buttons = document.querySelectorAll('header button');
+      var sections = { de: document.getElementById('de'), en: document.getElementById('en') };
+      function show(lang) {
+        root.setAttribute('lang', lang);
+        for (var key in sections) { sections[key].hidden = (key !== lang); }
+        for (var i = 0; i < buttons.length; i++) {
+          buttons[i].setAttribute('aria-pressed', buttons[i].getAttribute('data-lang') === lang ? 'true' : 'false');
+        }
+      }
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', function () { show(this.getAttribute('data-lang')); });
+      }
+      var pref = (navigator.language || 'en').toLowerCase();
+      show(pref.indexOf('de') === 0 ? 'de' : 'en');
+    })();
+  </script>
+</body>
+</html>
